@@ -1,0 +1,441 @@
+<!doctype html> 
+<!-- Elijah Moran -->
+<!-- MIU 1310 --> 
+
+<html lang="en">
+<head>
+
+    <!-- Meta Tags -->
+    <meta charset="utf-8"/>
+    <meta name="keywords" content="DVD, VHS, Blu-ray, app, movielib"/>
+    <meta name="description" content="MovieLib"/>
+    <meta name="viewport" content="user-scalable=no, width=device-width"/>
+    <meta name="robots" content="index, follow"/>
+    
+    
+    <!-- Title -->  
+    <title>MovieLib</title>
+  
+    <!--  Mobile viewport optimized: j.mp/bplateviewport -->
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+    <!-- Mobile IE needs ClearType for smoothing fonts -->
+    <meta http-equiv="cleartype" content="on">
+  
+    <!-- StyleSheets under here -->
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.css" />
+    <link rel="stylesheet" href="css/style.css" type="text/css" />
+    
+    <!-- JavaScript is normally at the end of the body, except for Modernizr which enables HTML5 elements & feature detects -->
+    <script src="js/libs/modernizr.custom.min.js"></script>
+</head>
+
+<!-- Body Content -->  
+<body>  
+    <!-- Start of Home Page -->
+    <div data-role="page" id="home">
+  
+        <div data-role="header">
+             <img src="images/Logo.png">  
+        </div>
+  
+        <div data-role="content" class="content">  
+            <img src="images/brandnewlogo2.png" width="100%" alt="logomain" class="logomain"/> 
+
+            <a href="#additem" data-role="button" data-icon="arrow-r" data-iconpos="right" data-theme="b">Add A Movie</a>
+            <a href="#movielib" id="displayData" data-role="button" data-icon="arrow-r" data-theme="e" data-iconpos="right">Show Movie Library</a></br>
+
+                 <ul data-role="listview" data-theme="c" data-filter="true">
+                     <li><a href="construction.html" >Browse DVD</a></li>
+                     <li><a href="construction.html" >Browse VHS</a></li>
+                     <li><a href="construction.html" >Browse Blu-ray</a></li>
+                  </ul>
+        </div>
+    
+        <!-- Footer -->
+        <div data-role="footer" data-position="fixed">
+
+            <!-- Navbar -->
+            <div data-role="navbar">
+                <ul>
+                    <li><a href="#home" data-icon="home" data-iconpos="left" class="secondaryColor">Home</a></li>
+                    <li><a href="#about" data-icon="info" data-iconpos="left" class="mainColor">About App</a></li>
+                    <li><a href="#news"data-icon="news" data-iconpos="left" class="mainColor">Blockbuster News</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Form Page -->
+    <div data-role="page" data-title="Add A Movie" id="additem" data-add-back-btn="true" >
+  
+        <div data-role="header" align="center">
+            <img src="images/logo.png" class="logo" align="center">  
+        </div>
+    
+        <div data-role="content">
+    
+        <!-- Form Content -->
+    <form action="#" method="post" id="addMovieForm">
+            <div class="movieinfo">
+                <h2><u>Enter Movie</u></h2>
+                <h4>* Required Fields</h4>
+                <label for="styles" id="select"> <strong>*Movie Style:</strong></label>
+                    <select id="styles">
+                        <option value="--Choose a Style--">Choose A Style</option>
+                        <option value="DVD">DVD</option>
+                        <option value="VHS">VHS</option>
+                        <option value="Blu-ray">Blu-ray</option>
+                    </select> </br>
+                <div id="styles-error-message" class="error-message">Please choose a movie style.</div>
+
+                <label for="movie"> <strong>*Movie Name:</strong> </label><input type="text" placeholder="Blade Runner..." id="movie" /><br/>
+                <div id="mname-error-message" class="error-message">Please enter a movie name.</div>
+
+                <label for="mgenre"> <strong>*Movie Genre:</strong> </label><input type="text" placeholder="Action..." id="movie" /><br/>
+                <div id="mgenre-error-message" class="error-message">Please enter a genre.</div>
+
+                <label for="myear"> <strong>*Year movie made:</strong> </label><input type="text" placeholder="01-01-1988..." id="movie" /><br/>
+                <div id="myear-error-message" class="error-message">Please enter year made.</div>
+
+                <label for="mage"> <strong>*Suitable viewing age:</strong> </label><input type="text" placeholder="18..." id="movie" /><br/>
+                <div id="mage-error-message" class="error-message">Please enter suitable viewing age.</div>
+         
+                <!-- Checkbox -->
+                <label for="favorite"> <strong>Is this a favorite?</strong> </label><input type="checkbox" id="favorite" value="Yes" checked="true" class="favorite"/><br/>
+
+                <!-- Range -->
+                <label for="movierating"> <strong>How would you rate this movie? (On a scale of 1 to 10):</strong> </label><input type="range" min="1" max="10" id="score" value="5"/><br/><br/>
+
+                <!-- Radio -->
+                <label for="quality"><strong>What is the quality of this movie?</strong></label>
+                    <input id="excellent" name="quality" type="radio" value="Excellent" data-role="none" checked="true" class="quality"><label for="excellent">Excellent</label>
+
+                    <input id="good" name="quality" type="radio" value="Good" data-role="none" checked="true" class="quality"><label for="good">Good</label>
+
+                    <input id="damaged" name="quality" type="radio" value="Damaged" data-role="none" checked="true" class="quality"><label for="damaged">Damaged</label>
+            </div>
+        
+            <div class="comments">
+                <h2><u>Movie Comments</u></h2>
+                    <div data-role="fieldcontain">
+                        <label for="comments"> <strong>Comments:</strong> </label><textarea id="comments" placeholder="Soooo...How was it?"></textarea>
+                    </div>
+            </div>
+      <a href="#movielib" data-role="button" data-icon="plus" data-theme="b" id="saveData">Add A Movie</a>
+    </form>  
+  
+    </div>
+     <!-- Footer -->
+    <div data-role="footer" data-position="fixed">
+      <!-- Navbar -->
+      <div data-role="navbar">
+        <ul>
+          <li><a href="#home" data-icon="home" data-iconpos="left" class="secondaryColor">Home</a></li>
+          <li><a href="#about" data-icon="info" data-iconpos="left" class="mainColor">About App</a></li>
+          <li><a href="#news"data-icon="news" data-iconpos="left" class="mainColor">Blockbuster News</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  
+  <!--  Start Library Page -->
+  <div data-role="page" data-title="Movie Library" id="movielib" data-add-back-btn="true">
+  
+    <div data-role="header" data-position="fixed" align="center">
+    	<img src="images/logo.png" class="logo">
+      <a href="#additem" id="addNew" data-icon="plus" class="ui-btn-right" data-theme="b">Add</a> 
+    </div>
+    
+    <div data-role="content"> 
+
+        <ul id="movielist" data-role="listview" data-filter="true"></ul>
+        </br>
+        <!-- <ul id="movielist" data-role="listview" data-filter="true" ></ul> -->
+        <a href="#" id="clearData" data-role="button" data-theme="e">Clear Movie Library</a>  
+    </div>
+
+    <!-- Footer -->
+    <div data-role="footer" data-position="fixed">
+      <!-- Navbar -->
+      <div data-role="navbar">
+        <ul>
+          <li><a href="#home" data-icon="home" data-iconpos="left" class="secondaryColor">Home</a></li>
+          <li><a href="#about" data-icon="info" data-iconpos="left" class="mainColor">About App</a></li>
+          <li><a href="#news"data-icon="news" data-iconpos="left" class="mainColor">Blockbuster News</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Start of About Page -->
+  <div data-role="page" id="about" data-add-back-btn="true">
+
+    <!-- Header -->
+    <div data-role="header" data-position="fixed" class="mainColor">
+      <h1>About</h1>
+    </div>
+
+    <!--  About Content -->
+    <div data-role="content">
+
+      <div>
+        <img src="images/aboutLogo.png" class="imgSize" id="aboutLogo.Img"  align="center" />
+      </div>
+
+      <div>
+        <ul data-role="listview">
+
+          <li>
+            <a href="#underConstruction">
+              <img src="images/aboutLogo.png"/>
+              <h4>About the App</h4>
+              <p>This will tell you about the application.</p>
+            </a>
+          </li>
+
+          <li>
+            <a href="#underConstruction">
+              <img src="images/aboutLogo.png"/>
+              <h4>About the Developer</h4>
+              <p>This will tell you about the developer.</p>
+            </a>
+          </li>
+
+          <li>
+            <a href="#underConstruction">
+              <img src="images/aboutLogo.png"/>
+              <h4>Credits</h4>
+              <p>This is where any images or information from outside sources are credited.</p>
+            </a>
+          </li>
+
+            <li>
+            <a href="#underConstruction">
+              <img src="images/aboutLogo.png"/>
+              <h4>Review Gold App</h4>
+              <p>This will take you to the "Gold" version of this application.</p>
+            </a><li><a href="#home" data-icon="home" data-iconpos="left" class="secondaryColor">Home</a></li>
+          <li><a href="#about" data-icon="info" data-iconpos="left" class="mainColor">About App</a></li>
+          <li><a href="#news"data-icon="news" data-iconpos="left" class="mainColor">Blockbuster News</a></li>
+          </li>
+
+        </ul>
+      </div>
+
+    </div>
+
+    <!-- Footer -->
+    <div data-role="footer" data-position="fixed">
+      <!-- Navbar -->
+      <div data-role="navbar">
+        <ul>
+          <li><a href="#home" data-icon="home" data-iconpos="left" class="secondaryColor">Home</a></li>
+          <li><a href="#about" data-icon="info" data-iconpos="left" class="mainColor">About App</a></li>
+          <li><a href="#news"data-icon="news" data-iconpos="left" class="mainColor">Blockbuster News</a></li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Start of About App Page -->
+  <div data-role="page" id="aboutApp" data-add-back-btn="true">
+
+    <!-- Header -->
+    <div data-role="header" data-position="fixed" class="mainColor">
+      <h1>About the App</h1>
+    </div>
+
+    <!--  About App Content -->
+    <div data-role="content">
+
+      <div>
+        <img class="imgSize" src="images/LogoMain4.png" />
+      </div>
+
+      <div>
+        <h4>About this app</h4>
+        <p class="indent">This application will allow you to store your current collection of movies in a central data location. You will be able to document your DVD, Blu-ray, and ,for the diehard movie fans, VHS videos. You will find that this app will help you or your guest choose a movie quickly for whatever mood you are in.</p>    
+      </div>
+    
+      <div class="ui-grid-a">
+        <div class="ui-block-a">
+          <ul data-role="listview" data-inset="true">
+            <li data-role="list-divider">Pros</li>
+            <li>Storage on device is kept open.</li>
+            <li>No need to actually install this app.</li>
+            <li>All in one to-do workout list.</li>
+          </ul>
+        </div>
+        <div class="ui-block-b">
+          <ul data-role="listview" data-inset="true">
+            <li data-role="list-divider">Cons</li>
+            <li>It's not locally installed.</li>
+            <li>No internet, no working about.</li>
+            <li>Saves are on browser, not on server or laocally.</li>
+            <li>Can only access saved workouts from particular device.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <div data-role="footer" data-position="fixed">
+        <!-- Navbar -->
+        <div data-role="navbar">
+            <ul>
+                <li><a href="#home" data-icon="home" data-iconpos="left" class="mainColor">Home</a></li>
+                <li><a href="#about" data-icon="info" data-iconpos="left" class="secondaryColor">About App</a></li>
+                <li><a href="#news"data-icon="news" data-iconpos="left" class="mainColor">Blockbuster News</a></li>
+            </ul>
+        </div>
+    </div>
+ 
+    <!-- Start of otherApp Page -->
+    <div data-role="page" id="otherApp" data-add-back-btn="true">
+
+    <!-- Header -->
+    <div data-role="header" data-position="fixed" class="mainColor">
+      <h1>About the Other App</h1>
+    </div>
+
+    <!--  Other App Content -->
+    <div data-role="content">
+
+        <ul data-role="listview">
+            <li>
+                <img src="images/Bronze_Star.png"/>
+                <h4>Bronze App</h4>
+                <p>Currently, you are on the Bronze App.<br />To see the Gold App, click the button<br />below.</p>
+            </li>
+        </ul>
+
+        <a href="http://g29670.github.com/MiU-Project-3/Gold/index.html" data-role="button">Review the Gold App</a>
+    </div>
+
+    <!-- Footer -->
+    <div data-role="footer" data-position="fixed">
+        <!-- Navbar -->
+        <div data-role="navbar">
+            <ul>
+                <li><a href="#home" data-icon="home" data-iconpos="left" class="mainColor">Home</a></li>
+                <li><a href="#about" data-icon="info" data-iconpos="left" class="mainColor">About App</a></li>
+               <li><a href="#news"data-icon="news" data-iconpos="left" class="secondaryColor">Blockbuster News</a></li>
+            </ul>
+        </div>
+    </div>
+
+    </div>
+    <!-- Start of News Page -->
+    <div data-role="page" id="news" data-add-back-btn="true">
+
+        <!-- Header -->
+        <div data-role="header" data-position="fixed" class="mainColor">
+            <h1>Blockbuster News</h1>
+        </div>
+        
+        <!--  News Page Content -->
+        <div data-role="content">
+            <ul data-role="listview" data-filter="true">
+                <li>
+                    <a href="#underConstruction">
+                        <img src="images/Logo.png"/>
+                        <h4>Gravity’s Friday Box Office Should Propel It To Another Record Weekend </h4>
+                        <span><small>by Mack Rawden</small></span>
+                        </br></br>
+                        <p>2013-10-12<br/>Tags: Movies,blockbusters</p>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#underConstruction">
+                        <img src="images/Logo.png"/>
+                        <h4>Operation Kino 134 Review: The Unbearable Tension Of Captain Phillips </h4>
+                        <span><small>by Operation Kino</span></small>
+                        </br></br>
+                        <p>2013-10-12<br/>Tags: Adventure</p>
+                    </a>
+                </li>
+
+                <li>
+                   <a href="#underConstruction">
+                       <img src="images/Logo.png"/>
+                       <h4>'The Walking Dead' Premiere: Here's Everything You Missed</h4>
+                       <span><small>by Alex Zalben</small></span>
+                       </br></br>
+                       <p>2013-10-13 <br/>Tags: Action</p>
+                   </a>
+                </li>
+
+                <li>
+                   <a href="#underConstruction">
+                       <img src="images/Logo.png"/>
+                       <h4>'Angry Birds': What To Expect When It Crashes Into Theaters.</h4>
+                       <span><small>by Alex Zalben</small></span>
+                       </br></br>
+                       <p>2013-10-13 <br/>Tags: Animation</p>
+                   </a>
+                </li>
+
+                <li>
+                   <a href="#underConstruction">
+                      <img src="images/Logo.png"/>
+                      <h4>'Harry Potter' Reunion: Daniel Radcliffe And Alan Rickman Reveal What It'd Take</h4>
+                      <span><small>by Kevin P. Sullivan</small></span>
+                      </br></br>
+                      <p>2013-10-13 <br/>Tags: Adventure, Action</p>
+                   </a>
+                </li>
+            </ul>
+        </div>
+    </div>    
+
+    <!-- Footer -->
+    <div data-role="footer" data-position="fixed">
+        <!-- Navbar -->
+        <div data-role="navbar">
+            <ul>
+                <li><a href="index.html" data-ajax="false">Home</a></li>
+                <li><a href="#about" data-icon="info" data-iconpos="left" class="mainColor">About App</a></li>
+                <li><a href="#news"data-icon="news" data-iconpos="left" class="secondaryColor">Blockbuster News</a></li>
+           </ul>
+        </div>
+    </div>
+
+    <!-- Start of Construction Page -->
+    <div data-role="page" id="underConstruction" data-add-back-btn="true">
+
+        <!-- Header -->
+        <div data-role="header" data-position="fixed" class="mainColor">
+            <h1>Under Construction</h1>
+        </div>
+
+        <!--  Construction Content -->
+        <div data-role="content">
+            <img src="images/Construction.png" class="imgSize"/>
+        </div>
+    </div>
+    <!-- Footer -->
+    <div data-role="footer" data-position="fixed">
+        <!-- Navbar -->
+        <div data-role="navbar">
+            <ul>
+                <li><a href="index.html" data-ajax="false">Home</a></li>
+                <li><a href="#about" data-icon="info" data-iconpos="left" class="mainColor">About App</a></li>
+                <li><a href="#news"data-icon="news" data-iconpos="left" class="mainColor">Blockbuster News</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- JavaScript under here -->
+    <script src="http://code.jquery.com/jquery-1.6.4.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.js"></script>
+    <script src="js/form.js" type="text/javascript"></script>
+    <script src="js/data.js" type="text/javascript"></script>
+    <script src="js/main.js" type="text/javascript"></script>
+    <script src="js/json.js" type="text/javascript"></script>   
+</body>
+</html>
