@@ -2,27 +2,27 @@ var Main = {
   //Function to let us see the data store in local storage
   showData : function() {
     //Write data from local storage to the browser
-    var movieList = $('#movielist');
-    movieList.empty();
-    var movies = Data.loadMovies();
-    for(var i in movies) {
-      var obj = movies[i];
-      var movieLi = $('<li>');
-      movieList.append(movieLi);
-      movieLi.append($('<img>').attr("src", "images/"+ obj.platforms[1] +".png"));
-      movieLi.append($("<h3>").text(obj.movie[1]));
-      movieLi.append($("<p>").text("Score: " + obj.score[1]));
-      var movieDetailsList = $('<ul>');
-      movieLi.append(movieDetailsList);
+    var gameList = $('#gamelist');
+    gameList.empty();
+    var games = Data.loadGames();
+    for(var i in games) {
+      var obj = games[i];
+      var gameLi = $('<li>');
+      gameList.append(gameLi);
+      gameLi.append($('<img>').attr("src", "images/"+ obj.platforms[1] +".png"));
+      gameLi.append($("<h3>").text(obj.game[1]));
+      gameLi.append($("<p>").text("Score: " + obj.score[1]));
+      var gameDetailsList = $('<ul>');
+      gameLi.append(gameDetailsList);
       for(var n in obj) {
         if (n !== 'key') {
-           movieDetailsList.append($('<li>').text(obj[n][0]+" "+obj[n][1]));
+           gameDetailsList.append($('<li>').text(obj[n][0]+" "+obj[n][1]));
         }
       }
-      Main.makeItemLinks(obj['key'], movieDetailsList); //Create our edit and delete buttons/link for each item in local storage.
+      Main.makeItemLinks(obj['key'], gameDetailsList); //Create our edit and delete buttons/link for each item in local storage.
     }
     try {
-       movieList.listview('refresh');
+       gameList.listview('refresh');
     }
     catch (e) {
       // ignoring this exception if it happens
@@ -41,23 +41,23 @@ var Main = {
     list.append(editLi);
     
     //add delete single item link
-    var deleteLink = $("<a>").attr('href', '#movielib').text('Delete Movie').attr('data-role', 'button').attr('data-theme', 'a').bind('tap', params, Data.deleteItem);
+    var deleteLink = $("<a>").attr('href', '#gamelib').text('Delete Movie').attr('data-role', 'button').attr('data-theme', 'a').bind('tap', params, Data.deleteItem);
 
     var deleteLi = $('<p>');
     deleteLi.append(deleteLink);
     list.append(deleteLi);
   },
   
-  autoFillMoviesIfNecessary : function() {
+  autoFillGamesIfNecessary : function() {
   if(localStorage.length === 0) {
       alert("There are no movies in your library so the default movies have been added.");
-      Data.autoFillMovies();
+      Data.autoFillGames();
       Main.showData();
     }
   },
   
   onDisplayDataTapped : function() {
-    Main.autoFillMoviesIfNecessary();
+    Main.autoFillGamesIfNecessary();
     Main.showData();
   }
 };

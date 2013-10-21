@@ -1,6 +1,6 @@
 
 .ui-body-c {
-	font-family: "Helvetica Neue";
+	font-family: "Helvetica Neue, Roboto, Droid-Sans";
 	background-color: white;
 	color: black;
 	text-align: center;
@@ -11,7 +11,7 @@
 }
 
 .mainColor {
-	background-image: -webkit-linear-gradient(bottom, rgb(0,128,136), rgb(0,148,156), rgb(0,168,176));
+	background-image: -webkit-linear-gradient(bottom, rgb(255,0,0), rgb(238,0,0), rgb(105,105,105));
 }
 
 .secondaryColor {
@@ -33,7 +33,7 @@
 }
 
  .ui-grid-b {
-	 font-family: "Helvetica Neue";
+	 font-family: "Helvetica Neue, Roboto, Droid-Sans";
     font-size-adjust : 100
     margin: 1.5em 0;
     color: #000000;
@@ -42,16 +42,12 @@
     text-align:center;
 }
 
-.indent {
-	 text-indent: 40px;
-}
-
 #aboutImg {
 	 margin-bottom: 25px;
 }
 
 #searchButton {
-	font-family: "Helvetica Neue";
+	font-family: "Helvetica Neue, Roboto, Droid-Sans";
     font-size: 12px;
 	color: #FF0E0D;
 	background-image: -webkit-linear-gradient(bottom, rgb(147,84,22), rgb(199,136,74), rgb(250,187,25));
@@ -64,9 +60,8 @@
 	-webkit-box-shadow: 0px 4px 4px -3px #000;
 }
 
-
 .getStarted {
-	font-family: "Helvetica Neue";
+	font-family: "Helvetica Neue, Roboto, Droid-Sans";
     font-size-adjust : 100
     margin: 1.5em 0;
     color: #000000;
@@ -74,6 +69,172 @@
     margin:0 auto; 
     text-align:center; 
 }
+
+body {
+	background-image: url('../images/pattern.png');
+
+}
+
+h1 {
+    color: #ffffff;
+    display:block;
+    padding: 0.25em;
+    text-align: center;
+    text-shadow: 2px 2px 2px #393c3e;
+    font-family: "Helvetica Neue, Roboto, Droid-Sans";
+    font-size: 26px;
+} 
+
+p {
+	text-align: center;
+	font-family: "Helvetica Neue, Roboto, Droid-Sans";
+	font-size: 15px;
+}
+
+h2 {
+    color: #000000;
+    display:block; 
+    margin:0 auto; 
+    text-align:center;
+    font-family: "Helvetica Neue, Roboto, Droid-Sans";
+    font-size: 20px;
+} 
+
+h3 {
+    color: #ffffff;
+    display:block;
+    padding: 0.25em;
+    text-align: center;
+    text-shadow: 2px 2px 2px #393c3e;
+    font-family: " Helvetica Neue; Roboto, Droid-Sans";
+    font-size: 26px;
+}
+
+h4 {
+    color: #000000;
+    display:block;
+    padding: 0.25em; 
+    margin:0 auto; 
+    text-align:center;
+    font-family: "Helvetica Neue, Roboto, Droid-Sans";
+    font-size: 26px;
+} 
+
+ul {
+	color: #000000; 
+}
+
+ul.errors li {
+	color: red;
+	margin-left: -20px;
+	list-style-type: circle;
+}	  
+
+h5 {
+    color: red;
+    display:block; 
+    margin:0 auto; 
+    text-align:center;
+    font-family: "Helvetica Neue, Roboto, Droid-Sans";
+    font-size: 20px;
+}    
+
+select {
+	width: 100%;
+}
+
+input {
+	width: 96%;
+}
+
+textarea {
+	width: 100%;
+	height: 75px;
+}
+
+span {
+	margin-left: 6px;
+}
+
+
+nav {
+	text-align: center;
+}
+
+ol {
+	border-bottom: 1px dotted #8a8a8a;
+	margin-left: -115px;
+	padding-bottom: 25px;
+	padding-top: 25px;
+}
+
+li {
+	font-family: "Helvetica Neue, Roboto, Droid-Sans";
+	font-size: 14px;
+	list-style-type: none;
+	color: #2a5686;
+}
+
+a {
+	font-family: "Helvetica Neue, Roboto, Droid-Sans";
+}
+
+input.searchbox {
+	width: 96%;
+}
+
+input.searchbutton {
+	width: 100%;
+}
+
+img.additem {
+	padding-bottom: 15px;
+}
+
+.indent {
+	 text-indent: 40px;
+}
+
+.search {
+   display:block; 
+   margin:0 auto; 
+   text-align:center; 
+}
+
+.getStarted {
+   display:block; 
+   margin:0 auto; 
+   text-align:center; 
+} 
+
+.saveData {
+   display:block; 
+   margin:0 auto; 
+   text-align:center;
+}
+
+.browse {
+   display:block; 
+   margin:0 auto; 
+   text-align:center;
+}
+
+.editButton {
+   display:block; 
+   margin:0 auto; 
+   text-align:center;
+}
+
+.deleteButton {
+   display:block; 
+   margin:0 auto; 
+   text-align:center;
+} 
+
+
+
+
+
 
 
 
